@@ -31,4 +31,10 @@ public class SongJpaService implements SongRepository{
         List<Song> songList = songJpaRepository.findAll();
         return new ArrayList<>(songList);
     }
+
+    @Override
+    public Song addSong(Song song){
+        songJpaRepository.save(song);
+        return song;
+    }
 }
