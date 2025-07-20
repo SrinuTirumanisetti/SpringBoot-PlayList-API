@@ -8,3 +8,23 @@
  */
 
 // Write your code here
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.*;
+
+import com.example.song.model.Song;
+import com.example.song.service.SongJpaService;
+
+@RestController
+public class SongController{
+
+    @Autowired
+    public SongJpaService songService;
+
+    @GetMapping("/songs")
+    public ArrayList<Song> getSongs(){
+        return songService.getSongs();
+    }
+
+}
