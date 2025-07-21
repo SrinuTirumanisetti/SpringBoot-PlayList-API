@@ -37,4 +37,15 @@ public class SongJpaService implements SongRepository{
         songJpaRepository.save(song);
         return song;
     }
+
+    @Override
+    public Song getSongById(int songId){
+        Song song = songJpaRepository.findById(songId).get();
+        if(song!=null){
+            return song;
+        }
+        else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
 }

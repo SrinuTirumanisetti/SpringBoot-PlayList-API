@@ -7,4 +7,5 @@ import java.util.*;
 public interface SongRepository{
     ArrayList<Song> getSongs();
     Song addSong(Song song);
+    Song getSongById(int songId);
 }
