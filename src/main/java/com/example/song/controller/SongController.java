@@ -42,4 +42,9 @@ public class SongController{
     public Song updateSong(@PathVariable("songId") int songId,@RequestBody Song song){
         return songService.updateSong(songId,song);
     }
+
+    @DeleteMapping("songs/{songId}")
+    public void deleteSong(@PathVariable("songId") int songId){
+        songService.deleteSong(songId);
+    }
 }
