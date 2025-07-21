@@ -32,12 +32,14 @@ public class Song{
     @Column(name="musicdirector")
     private String musicDirector;
 
-    public Song(String songName,String lyricist,String singer,String musicDirector){
+    public Song(int songId, String songName, String lyricist, String singer, String musicDirector) {
+        this.songId = songId;
         this.songName = songName;
         this.lyricist = lyricist;
         this.singer = singer;
         this.musicDirector = musicDirector;
     }
+
 
     public Song(){} 
 
